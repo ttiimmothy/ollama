@@ -48,6 +48,7 @@ var integrations = map[string]Runner{
 	"droid":    &Droid{},
 	"opencode": &OpenCode{},
 	"openclaw": &Openclaw{},
+	"pi":       &Pi{},
 }
 
 // recommendedModels are shown when the user has no models or as suggestions.
@@ -63,6 +64,7 @@ var recommendedModels = []selectItem{
 var integrationAliases = map[string]bool{
 	"clawdbot": true,
 	"moltbot":  true,
+	"pi":       true,
 }
 
 func selectIntegration() (string, error) {
