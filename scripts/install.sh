@@ -49,11 +49,7 @@ if [ "$OS" = "Darwin" ]; then
         exit 1
     fi
 
-    if [ -n "${OLLAMA_VERSION:-}" ]; then
-        DOWNLOAD_URL="https://github.com/ollama/ollama/releases/download/${OLLAMA_VERSION}/Ollama-darwin.zip"
-    else
-        DOWNLOAD_URL="https://github.com/ollama/ollama/releases/latest/download/Ollama-darwin.zip"
-    fi
+    DOWNLOAD_URL="https://ollama.com/download/Ollama-darwin.zip${OLLAMA_VERSION:+?version=$OLLAMA_VERSION}"
 
     if pgrep -x Ollama >/dev/null 2>&1; then
         status "Stopping running Ollama instance..."
